@@ -1,0 +1,59 @@
+
+#SAMPLE CODE CLOVER API TEST
+# DATE :- 20/03/2019
+
+# IMPORT LIBRARIES
+import pandas as pd
+import requests
+import json
+from cloverapi.cloverapi_client import CloverApiClient
+
+# CALLING CLOVER API
+
+api_client = CloverApiClient(api_key='78938bd0-6267-a0fa-f619-dd143aa5cae5', merchant_id='590EY6YHVBFQ1',api_url='https://apisandbox.dev.clover.com:443')
+
+
+
+# CREATE ORDER OBJECT
+
+api_client.order_service.create_order(order = {"state": "open"})
+
+
+## GET ORDER ID'S
+
+api_client.order_service.get_orders()
+
+
+## UPDATE ORDERS BY LINE ITEMS BY ORDER ID
+
+api_client.order_service.create_line_item(order_id='TD96A80J9Y6H0',line_item={"name": 'pepsi',"price": 200,"unitQty":2})
+api_client.order_service.create_line_item(order_id='TD96A80J9Y6H0',line_item={"name": 'coke',"price": 250,"unitQty":2})
+
+api_client.order_service.create_line_item(order_id='J058ZJFXHASJY',line_item={"name": 'pepsi',"price": 200,"unitQty":3})
+
+
+#GET ORDER ID
+x=[]
+for i in range(0,len(api_client.order_service.get_orders()['elements'])):
+    api_client.order_service.get_orders()['elements'][i]['id']
+    x.append(api_client.order_service.get_orders()['elements'][i]['id'])
+
+
+# GET LINEITEMS IN ORDER ID
+
+
+
+api_client.order_service.get_orders()
+
+
+ordlist=[]
+for id in x:
+    ordlist.append(api_client.order_service.get_line_items_by_order(id)['elements'])
+
+
+
+xdf = pd.DataFrame(ordlist)
+
+
+
+
