@@ -1,0 +1,63 @@
+# IMPORT LIBRARIES
+import pandas as pd
+import json
+from cloverapi.cloverapi_client import CloverApiClient
+from datetime import datetime
+
+
+# CALLING CLOVER API
+def get_api_client(config):
+    api_client = CloverApiClient(api_key= config["api_key"], merchant_id= config["merchant_id"],api_url=config["api_url"])
+    return api_client
+
+#GET ORDER ID
+def get_orderids(api_client):
+    orderids = []
+    for i in range(0, len(api_client.order_service.get_orders()['elements'])):
+        api_client.order_service.get_orders()['elements'][i]['id']
+        orderids.append(api_client.order_service.get_orders()['elements'][i]['id'])
+    return orderids
+
+
+# GET INDIVIDUAL ORDER FOR EACH ITEM IN ORDER
+def get_orderlist(api_client,x):
+    ordlist=[]
+    for id in x:
+        ordlist.append(api_client.order_service.get_line_items_by_order(id)['elements'])
+    return ordlist
+
+#GET INDIVIDUAL ITEM IN EACH ORDER
+
+def get_item(ordlist):
+    Item_name=[]
+    Item_quantity=[]
+    Item_cost=[]
+    Item_time=[]
+    Item_Date = []
+    data = {}
+    for i in range(0,len(ordlist)):
+        for z in range(0,len(ordlist[i])):
+            Item_name.append(ordlist[i][z]['name'])
+            Item_quantity.append(ordlist[i][z]['unitQty'])
+            Item_time.append(ordlist[i][z]['createdTime'])
+            Item_cost.append(ordlist[i][z]['price'])
+    for i in range(0, len(Item_time)):
+        Item_Date.append(datetime.fromtimestamp(float(str(Item_time[i])[0:10])).strftime("%d-%m-%Y %H:%M:%S"))
+    data = {'Name': Item_name, 'Quantity': Item_quantity, 'Date': Item_Date, 'Cost': Item_cost}
+    df = pd.DataFrame(data)
+    df.to_csv('clover.csv')
+    return  df
+
+
+def main(config):
+    api_client = get_api_client(config)
+    orderids = get_orderids(api_client)
+    ordlist = get_orderlist(api_client, orderids)
+    get_item(ordlist)
+    pass
+
+
+if __name__ == "__main__":
+    with open('/home/arajan/Documents/Githubrepo/POS_Integration/config.json') as jsonfile:
+        config = json.load(jsonfile)
+    main(config)
