@@ -32,11 +32,8 @@ for i in range(0,len(api_response)):
     for r in range(0,len(api_response[i].itemizations)):
         Item_name.append(api_response[i].itemizations[r].name)
         Item_price.append(api_response[i].itemizations[r].single_quantity_money[0])
-        Item_qauntity.append(s)
+        Item_qauntity.append(api_response[i].itemizations[r].quantity)
         
-
-
-
-
-
-
+data = {'Name': Item_name, 'Quantity': Item_qauntity, 'Date': Item_Date, 'Cost': Item_price}
+    df = pd.DataFrame(data)
+    df.to_csv('square.cs')
