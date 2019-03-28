@@ -1,0 +1,6 @@
+#!/home/arajan/Documents/Githubrepo/POS_Integration/venv/bin/python
+
+if __name__ == "__main__":
+    import atrcopy
+    
+    atrcopy.run()
