@@ -1,0 +1,9 @@
+import json
+import requests
+
+url = 'https://api.omnivore.io/1.0/locations/'
+headers = {'Api-Key': '41e4d13e-07f2-46c8-8973-ef9fe21dc34f'}
+
+r = requests.get(url, headers=headers)
+
+r.text

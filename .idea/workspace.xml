@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6fbeb3ea-b5f7-4308-b311-caa838442a53" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/POSitouch" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/POS_Integration.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/POS_Integration.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Shopify.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/toast" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -75,11 +74,35 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/POSitouch">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="525">
+              <caret line="35" selection-start-line="26" selection-end-line="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/toast">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Shopify.py">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
-              <caret line="16" column="19" lean-forward="true" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+              <folding>
+                <element signature="e#1#15#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -117,6 +140,8 @@
         <option value="$PROJECT_DIR$/square.json" />
         <option value="$PROJECT_DIR$/Sqaure_transaction.py" />
         <option value="$PROJECT_DIR$/POSitouch" />
+        <option value="$PROJECT_DIR$/toast" />
+        <option value="$PROJECT_DIR$/Shopify.py" />
       </list>
     </option>
   </component>
@@ -131,7 +156,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -156,6 +180,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -315,12 +340,16 @@
       <workItem from="1553605164416" duration="305000" />
       <workItem from="1553605484744" duration="33000" />
       <workItem from="1553674578671" duration="6907000" />
-      <workItem from="1553757203343" duration="5403000" />
+      <workItem from="1553757203343" duration="6003000" />
+      <workItem from="1553853031529" duration="3235000" />
+      <workItem from="1553933379572" duration="877000" />
+      <workItem from="1554119012692" duration="5000" />
+      <workItem from="1554119084291" duration="11290000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="147687000" />
+    <option name="totallyTimeSpent" value="163694000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -335,7 +364,7 @@
     <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18215811" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19070514" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -350,11 +379,11 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50267094" side_tool="true" weight="0.3640351" />
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49946582" weight="0.32894737" />
-      <window_info active="true" anchor="bottom" id="Python Console" order="12" sideWeight="0.49732906" visible="true" weight="0.3651316" />
+      <window_info active="true" anchor="bottom" id="Python Console" order="12" sideWeight="0.49732906" visible="true" weight="0.36732456" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" visible="true" weight="0.32959402" />
+      <window_info anchor="right" id="SciView" order="3" visible="true" weight="0.056623932" />
       <window_info anchor="right" id="R Graphics" order="4" />
       <window_info anchor="right" id="R Packages" order="5" />
       <window_info anchor="right" id="Database" order="6" />
@@ -454,8 +483,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/POSitouch">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="35" selection-start-line="26" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/toast">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Shopify.py">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
-          <caret line="16" column="19" lean-forward="true" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="e#1#15#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
